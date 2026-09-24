@@ -1,5 +1,7 @@
 """Beginner-first project guidance."""
+
 from dataclasses import dataclass, field
+
 
 @dataclass(frozen=True)
 class GuideStep:
@@ -9,6 +11,7 @@ class GuideStep:
     expect: str
     if_broken: str
     stop_point: bool = False
+
 
 @dataclass
 class ProjectGuide:
@@ -23,18 +26,31 @@ class ProjectGuide:
         return self
 
     def render(self) -> str:
-        lines = [f"# {self.title}", "", "## What we're building", self.goal, ""]
+        lines = [
+            f"# {self.title}",
+            "",
+            "## What we're building",
+            self.goal,
+            "",
+        ]
         for step in self.steps:
             lines += [
-                f"## Step {step.number} — {step.title}", "",
-                step.do_this, "",
-                f"**You should see:** {step.expect}", "",
+                f"## Step {step.number} — {step.title}",
+                "",
+                step.do_this,
+                "",
+                f"**You should see:** {step.expect}",
+                "",
                 f"**If it does not work:** {step.if_broken}",
             ]
             if step.stop_point:
-                lines += ["", "**STOP HERE.** Check this step before continuing."]
+                lines += [
+                    "",
+                    "**STOP HERE.** Check this step before continuing.",
+                ]
             lines += [""]
         return "\n".join(lines).rstrip()
+
 
 def beginner_rules() -> tuple[str, ...]:
     return (
