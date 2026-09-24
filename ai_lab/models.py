@@ -1,6 +1,8 @@
 """Canonical AI requirement model."""
+
 from dataclasses import dataclass, field
 from typing import Any
+
 
 @dataclass
 class AIRequirement:
@@ -16,16 +18,30 @@ class AIRequirement:
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "AIRequirement":
-        missing = [k for k in ("name", "purpose") if not data.get(k)]
+        missing = [key for key in ("name", "purpose") if not data.get(key)]
         if missing:
             raise ValueError(f"Missing required fields: {', '.join(missing)}")
-        return cls(name=str(data["name"]), purpose=str(data["purpose"]),
-            inputs=[str(x) for x in data.get("inputs", [])], outputs=[str(x) for x in data.get("outputs", [])],
-            capabilities=[str(x) for x in data.get("capabilities", [])], constraints=[str(x) for x in data.get("constraints", [])],
-            preferred_language=str(data.get("preferred_language", "python")), model_family=data.get("model_family"),
-            execution_mode=str(data.get("execution_mode", "review-first")))
+        return cls(
+            name=str(data["name"]),
+            purpose=str(data["purpose"]),
+            inputs=[str(value) for value in data.get("inputs", [])],
+            outputs=[str(value) for value in data.get("outputs", [])],
+            capabilities=[str(value) for value in data.get("capabilities", [])],
+            constraints=[str(value) for value in data.get("constraints", [])],
+            preferred_language=str(data.get("preferred_language", "python")),
+            model_family=data.get("model_family"),
+            execution_mode=str(data.get("execution_mode", "review-first")),
+        )
 
     def to_dict(self) -> dict[str, Any]:
-        return {"name":self.name,"purpose":self.purpose,"inputs":self.inputs,"outputs":self.outputs,
-                "capabilities":self.capabilities,"constraints":self.constraints,"preferred_language":self.preferred_language,
-                "model_family":self.model_family,"execution_mode":self.execution_mode}
+        return {
+            "name": self.name,
+            "purpose": self.purpose,
+            "inputs": self.inputs,
+            "outputs": self.outputs,
+            "capabilities": self.capabilities,
+            "constraints": self.constraints,
+            "preferred_language": self.preferred_language,
+            "model_family": self.model_family,
+            "execution_mode": self.execution_mode,
+        }
