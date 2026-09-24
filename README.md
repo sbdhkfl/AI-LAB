@@ -4,47 +4,42 @@ AI-LAB is an open-source, modular laboratory for discovering, configuring, and b
 
 ## Vision
 
-AI-LAB connects human intent to reproducible AI projects. A user describes an AI in natural language, AI-LAB turns that specification into a structured project plan, selects compatible open-source components, validates the plan, generates project files, and provides diagnostics for failures.
+A user describes an AI in natural language. AI-LAB turns that specification into a structured plan, validates it, resolves compatible open-source components, generates project artifacts, and provides detailed diagnostics. It works with the companion Universal-Language-Compiler (ULC): ULC translates human intent into supported programming languages; AI-LAB manages the higher-level AI project lifecycle.
 
-AI-LAB works with the companion Universal-Language-Compiler (ULC). ULC handles human-language-to-code translation for supported programming languages; AI-LAB handles the higher-level AI project lifecycle.
+## Features
 
-## Core principles
-
-- Open-source-first architecture.
-- Model/provider adapters instead of hard-coded vendors.
-- Human-readable project specifications.
-- Deterministic validation wherever possible.
-- Detailed diagnostics and actionable debugging.
-- Tests before claiming a generated project is valid.
-- Sandboxed execution boundaries; generated code is not automatically executed.
-- Modular components that can be replaced or extended.
-- No secrets committed to source control.
-
-## MVP
-
-The first implementation provides a structured AI specification schema, project planner, local model registry, validation and diagnostic reporting, project manifest generator, safe dry-run build workflow, CLI commands, unit tests, CI, and debugging documentation.
+- Human-readable AI specifications
+- Model/component registry with license metadata
+- Deterministic planning and validation
+- Detailed diagnostic codes and debugging workflow
+- Project manifest generation
+- Automated tests and CI
+- Modular adapter architecture
+- Review-first execution boundary
+- Security guidance and secret-handling rules
 
 ## Quick start
 
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev]"
-python -m ai_lab --help
 python -m pytest
+python -m ai_lab --help
 
-Try examples/assistant.yaml with:
+Example commands:
 
-python -m ai_lab plan examples/assistant.yaml
 python -m ai_lab validate examples/assistant.yaml
+python -m ai_lab plan examples/assistant.yaml
 python -m ai_lab models
+python -m ai_lab generate examples/assistant.yaml generated/
 
 ## Safety boundary
 
-AI-LAB can generate plans and source files, but the MVP does not automatically execute generated programs. Review generated code and dependencies before running them. Future sandboxing must use explicit isolation rather than treating generated code as trusted.
+The MVP does not automatically execute generated programs. Generated source and dependencies must be reviewed before execution. A future runner must use explicit isolation, resource limits, filesystem controls, and network policy.
 
 ## Layout
 
-ai_lab/ contains the core Python package. tests/ contains automated tests. examples/ contains requirements. docs/ contains architecture and debugging documentation. .github/workflows/ contains CI.
+ai_lab/ = core package; tests/ = automated tests; examples/ = requirements; docs/ = architecture and debugging; .github/workflows/ = CI.
 
 ## License
 
