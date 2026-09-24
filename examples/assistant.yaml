@@ -1,0 +1,15 @@
+name: LocalAssistant
+purpose: A local assistant that answers user questions using a selected open-source language model.
+inputs:
+  - user_text
+outputs:
+  - assistant_text
+capabilities:
+  - text-generation
+  - conversation
+constraints:
+  - run locally when practical
+  - do not hard-code secrets
+preferred_language: python
+model_family: llama-family
+execution_mode: review-first
