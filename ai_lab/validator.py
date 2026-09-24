@@ -1,6 +1,6 @@
 """Requirement validation."""
 
-from .diagnostics import warning, error
+from .diagnostics import error, warning
 from .models import AIRequirement
 
 
