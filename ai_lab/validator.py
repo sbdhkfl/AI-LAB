@@ -3,7 +3,6 @@
 from .diagnostics import error, warning
 from .models import AIRequirement
 
-
 SUPPORTED_LANGUAGES = {
     "python",
     "c",
