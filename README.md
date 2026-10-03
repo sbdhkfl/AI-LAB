@@ -100,6 +100,9 @@ MIT. See LICENSE.
 ## Run in VS Code
 1. Open this repository folder in VS Code.
 2. Install the recommended Python extension.
-3. Run **Terminal → Run Task → AI-LAB: install** once.
-4. Press **F5** and choose **Run AI-LAB**.
-5. To check everything, run **Terminal → Run Task → AI-LAB: tests**.
+3. Create/activate the Python environment and install the project with python -m pip install -e ".[dev]".
+4. Press F5 and choose Run AI-LAB.
+5. Chrome opens automatically to the AI-LAB browser dashboard.
+6. Describe the AI project you want to build and press MAKE PLAN.
+
+The browser dashboard is now the normal way to use AI-LAB. Generated projects are not automatically executed.
