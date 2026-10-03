@@ -131,3 +131,19 @@ The browser is the main beginner-friendly interface. The CLI is still available 
 AI-LAB is designed to prefer local and open components when practical. Generated projects are **not automatically executed**. Review generated source, dependencies, permissions, and configuration before running them.
 
 Never put passwords, API keys, access tokens, or private information into a project specification or generated source.
+
+## Zero-setup start on Windows
+
+For normal use, you should not need to manually install Python packages.
+
+**Just double-click START.bat.**
+
+It will:
+1. Check for Python.
+2. Install Python 3.12 for your Windows user if it is missing and Windows Package Manager is available.
+3. Install AI-LAB and its dependencies.
+4. Start the browser dashboard.
+5. Open Chrome automatically.
+
+After setup, future starts are simply another double-click on START.bat.
+
