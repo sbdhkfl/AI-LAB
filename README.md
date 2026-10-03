@@ -106,3 +106,28 @@ MIT. See LICENSE.
 6. Describe the AI project you want to build and press MAKE PLAN.
 
 The browser dashboard is now the normal way to use AI-LAB. Generated projects are not automatically executed.
+
+
+## Browser mode (the normal way to use AI-LAB)
+
+AI-LAB now has a simple browser interface so you do not have to use the terminal for normal use.
+
+### Start it
+
+From VS Code:
+
+1. Open the AI-LAB folder.
+2. Install the project with:
+   `python -m pip install -e ".[dev]"`
+3. Press **F5** and choose **Run AI-LAB**.
+4. Chrome opens automatically.
+5. Describe the AI project you want to build.
+6. Press **MAKE PLAN**.
+
+The browser is the main beginner-friendly interface. The CLI is still available for developers and troubleshooting.
+
+### Local/open-source AI
+
+AI-LAB is designed to prefer local and open components when practical. Generated projects are **not automatically executed**. Review generated source, dependencies, permissions, and configuration before running them.
+
+Never put passwords, API keys, access tokens, or private information into a project specification or generated source.
