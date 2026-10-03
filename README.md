@@ -95,3 +95,11 @@ Example commands:
 ## License
 
 MIT. See LICENSE.
+
+
+## Run in VS Code
+1. Open this repository folder in VS Code.
+2. Install the recommended Python extension.
+3. Run **Terminal → Run Task → AI-LAB: install** once.
+4. Press **F5** and choose **Run AI-LAB**.
+5. To check everything, run **Terminal → Run Task → AI-LAB: tests**.
