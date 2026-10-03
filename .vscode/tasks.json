@@ -1,0 +1,1 @@
+{"version":"2.0.0","tasks":[{"label":"AI-LAB: install","type":"shell","command":"python -m pip install -e .","problemMatcher":[]},{"label":"AI-LAB: run","type":"shell","command":"python run.py","problemMatcher":[]},{"label":"AI-LAB: tests","type":"shell","command":"python -m pytest","problemMatcher":[]}]}
