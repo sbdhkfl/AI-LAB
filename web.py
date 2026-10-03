@@ -1,6 +1,18 @@
 """Simple browser dashboard for AI-LAB. It does not execute generated projects."""
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import html, webbrowser
+def open_chrome(url):
+    import shutil, subprocess, os, webbrowser
+    candidates=["google-chrome","google-chrome-stable","chromium","chromium-browser","chrome"]
+    for name in candidates:
+        exe=shutil.which(name)
+        if exe:
+            subprocess.Popen([exe,url]); return
+    if os.name=="nt":
+        for p in [r"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",r"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"]:
+            if os.path.exists(p): subprocess.Popen([p,url]); return
+    open_chrome(url)
+
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from urllib.parse import parse_qs
